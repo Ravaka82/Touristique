@@ -1,5 +1,7 @@
+const  dotenv  = require( 'dotenv');
+const  path  = require( 'path');
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+
 module.exports = {
-    HOST: "127.0.0.1",
-    PORT: 27017,
-    DB: "touristique"
-};
+ MongooseURI : process.env['MONGOOSE_URI']
+}
