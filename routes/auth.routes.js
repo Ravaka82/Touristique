@@ -16,7 +16,7 @@ module.exports = function(app) {
   });
 
   // Creation compte
-  app.get(
+  app.post(
     "/api/auth/signup",
     [
     verificationInscription.checkDuplicateNomOuEmail,
