@@ -62,11 +62,12 @@ app.get("/", (req, res) => {
 });
 
 //Route API
-require('./routes/auth.routes')(app);
+
 require('./routes/utilisateur.routes')(app);
 require('./routes/region.routes')(app);
 require('./routes/attractions.routes')(app);
 require('./routes/detailsAttractions.routes')(app);
+require('./routes/auth.routes')(app);
 // Demarrage serveur
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
