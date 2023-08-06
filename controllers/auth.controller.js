@@ -16,7 +16,7 @@ exports.signup = (req, res) => { // Creation utilisateur
 
   user.save((err, error) => {
     if (err) {
-      res.status(error.message).send({ message: err });
+      res.status(req.body).send({ message: err });
       return;
     }
     res.send({ message: "Utilisateur was registered successfully!" });
