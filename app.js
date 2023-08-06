@@ -25,7 +25,8 @@ app.use(
 const db = require("./models");
 const dbConfig = require("./config/db.config");
 
-
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 // Ao am db.config.js no manova anle url de connexion
 db.mongoose
   .connect(dbConfig.MongooseURI, {
@@ -33,10 +34,10 @@ db.mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    console.log("Connecter avec succès");
+    console.log("Connecté avec succès");
   })
   .catch(err => {
-    console.error("Erreur de connexion", err);
+    console.error("Erreur de connexion", err.message);
     process.exit();
   });
 
