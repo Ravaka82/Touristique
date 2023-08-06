@@ -14,9 +14,9 @@ exports.signup = (req, res) => { // Creation utilisateur
     mot_de_passe: bcrypt.hashSync(req.body.mot_de_passe, 8),
   });
 
-  user.save((err, user) => {
+  user.save((err, error) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.status(error.message).send({ message: err });
       return;
     }
     res.send({ message: "Utilisateur was registered successfully!" });
