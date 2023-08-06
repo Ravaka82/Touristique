@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => { // Creation utilisateur
-  console.log(req.body)
+  console.log("elllo")
   // const user = new Utilisateur({
   //   nom: req.body.nom,
   //   prenom:req.body.prenom,
